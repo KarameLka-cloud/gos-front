@@ -5,7 +5,7 @@ export const useCategoriesStore = defineStore("categories", {
   state: () => ({
     categories: {},
     header: {
-      header_category: "Выберите услуги",
+      header_category: "Что такое госключ?",
       header_sub_category: "",
     },
   }),

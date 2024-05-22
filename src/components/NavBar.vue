@@ -41,8 +41,8 @@ onMounted(() => {
       </div>
 
       <hr class="line">
-      <a href="../assets/Памятка_Госключ_для_сайта.docx" class="button" download>
-        Что такое госключ?
+      <a href="" class="button">
+        Вернуться на главную
       </a>
     </nav>
   </div>
