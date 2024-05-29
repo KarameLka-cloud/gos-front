@@ -22,7 +22,7 @@ onMounted(() => {
 <template>
   <div class="nav-section">
     <nav class="nav">
-      <a href="https://mfc38.ru/">
+      <a href="https://mfc38.ru/" class="mfc-link">
         <img src="/src/assets/logo.svg" alt="Logo mfc" class="nav-logo">
       </a>
 
@@ -71,6 +71,12 @@ onMounted(() => {
   border-radius: 15px;
   background-color: #efefef;
   overflow-y: auto;
+}
+
+.mfc-link {
+  display: block;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .nav-logo {

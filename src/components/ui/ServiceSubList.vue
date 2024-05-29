@@ -1,7 +1,6 @@
 <script setup>
 import {ref} from "vue";
 import ServiceBlock from "./ServiceBlock.vue";
-import ServiceSubList from "./ServiceSubList.vue";
 
 const props = defineProps({
   services: Object
@@ -23,11 +22,11 @@ function toggleList() {
     </a>
   </div>
 
-  <div v-for="service in props.services.children" v-show="isVisibleList">
-    <ServiceBlock v-if="service.link" :service="service"/>
-    <ServiceSubList v-else :services='service'/>
+  <div class="left-line">
+    <div v-for="service in props.services.children" v-show="isVisibleList">
+      <ServiceBlock v-if="service.link" :service="service"/>
+    </div>
   </div>
-
 </template>
 
 <style scoped>
@@ -49,5 +48,10 @@ function toggleList() {
 
 .button-block-drop-img {
   height: 30px;
+}
+
+.left-line {
+  border-left: 4px dotted #562212;
+  padding-left: 10px;
 }
 </style>

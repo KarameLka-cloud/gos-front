@@ -1,7 +1,6 @@
 <script setup>
 import {ref} from "vue";
 import ModalWindow from "../ModalWindow.vue";
-import ServiceList from "./ServiceList.vue";
 
 const props = defineProps({
   service: Object
@@ -15,15 +14,12 @@ function toggleModal() {
 </script>
 
 <template>
-  <!--  <div v-if="service.link">-->
   <ModalWindow :description="service.description" v-show="isVisibleModal" :toggleModal="toggleModal"/>
   <div class="service-block">
     <p>{{ props.service.title }}</p>
     <img src="../../assets/question.svg" alt="" v-if="service.description" class="modal-img" @click="toggleModal">
     <a :href="props.service.link" class="service-link">Получить услугу</a>
   </div>
-  <!--  </div>-->
-  <!--  <ServiceList v-else :service="service"/>-->
 </template>
 
 <style scoped>

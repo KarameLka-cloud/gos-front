@@ -1,5 +1,7 @@
 import axios from "axios";
-import { defineStore } from "pinia";
+import {defineStore} from "pinia";
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000';
 
 export const useCategoriesStore = defineStore("categories", {
   state: () => ({
@@ -13,9 +15,9 @@ export const useCategoriesStore = defineStore("categories", {
   actions: {
     async getCategories() {
       await axios
-        .get("http://127.0.0.1:8000/api/v1/categories")
+        .get("/api/v1/categories")
         .then((response) => {
-          this.categories = response.data.data;
+          this.categories = response.data;
         });
     },
     showCategory(id, text) {

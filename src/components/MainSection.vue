@@ -25,7 +25,7 @@ function toggleMemo() {
       </div>
       <div class="main-block">
         <div class="main-content">
-          <div class="main-info" v-if="!servicesStore.services.length">
+          <div class="main-info" v-if="!Object.keys(servicesStore.services).length">
             <MemoInfo v-show="isVisibleMemo" :toggleMemo="toggleMemo"/>
             <p class="main-info-content"><b>Госключ</b> — это мобильное приложение, разработанное государством для
               подписания юридически значимых
@@ -55,9 +55,9 @@ function toggleMemo() {
               канале</a>.
             </p>
           </div>
-          <div v-else v-for="service in servicesStore.services">
+          <div v-else v-for="service in servicesStore.services.service">
             <ServiceBlock v-if="service.link" :service="service"/>
-            <ServiceList v-else :service="service"/>
+            <ServiceList v-else :services="service"/>
           </div>
         </div>
       </div>
